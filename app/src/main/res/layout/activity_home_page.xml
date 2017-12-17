@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.sasmob.firebaseauthdemo.Home_page"
     android:background="#b9af99"
-    android:padding="50dp">
-
+    android:padding="50dp"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
@@ -18,4 +18,13 @@
         tools:layout_editor_absoluteY="68dp"
         android:textAlignment="center"
         android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LogOut"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="30dp" />
+
 </LinearLayout>
