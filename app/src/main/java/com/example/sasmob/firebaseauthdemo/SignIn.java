@@ -17,6 +17,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener {
          private Button btn_signin;
@@ -29,14 +34,20 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
         btn_signin = (Button) findViewById(R.id.btn_signin);
         edit_email = (EditText) findViewById(R.id.email);
         edit_password = (EditText) findViewById(R.id.edit_password);
-
         btn_signin.setOnClickListener(this);
         progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("server/saving-data/firelog");
+        DatabaseReference userREf = ref.child("users");
+        Map<String , User> users = new HashMap<>();
+        users.put("Asma", new User("April 1,1993","Asma Salim"));
+        users.put("Hajer", new User("March 3,1993","Hajer Mohsin"));
+        userREf.setValue(users);
 
     }
     public void SignIn(View view){
