@@ -29,7 +29,7 @@
         android:layout_width="178dp"
         android:layout_height="wrap_content"
         android:hint="your email"
-        android:inputType="textPersonName" />
+        android:inputType="textEmailAddress" />
 </LinearLayout>
 
     <LinearLayout
@@ -48,7 +48,7 @@
             android:layout_width="178dp"
             android:layout_height="wrap_content"
             android:hint="your Password"
-            android:inputType="textPersonName">
+            android:inputType="textPassword">
 
         </EditText>
     </LinearLayout>
