@@ -10,7 +10,9 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Home_page extends AppCompatActivity implements View.OnClickListener{
+import static com.example.sasmob.firebaseauthdemo.R.id.btn_logout;
+
+public class Home_page extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
     private TextView userEmail;
@@ -23,25 +25,33 @@ public class Home_page extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_home_page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser()== null){
-            finish();
-            startActivity(new Intent(this,SignIn.class));
+        if (userEmail == null) {
+           // finish();
+          // startActivity(new Intent(Home_page.this, SignIn.class));
         }
+
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         userEmail = (TextView) findViewById(R.id.textView);
-        userEmail.setText("Welcome" + user.getEmail());
+        //userEmail.setText("Welcome" + user.getEmail());
+
         logout = (Button) findViewById(R.id.btn_logout);
 
         logout.setOnClickListener(this);
+
     }
 
+    public void onLogout(View view) {
+        if (this.logout != null) {
+            FirebaseAuth.getInstance().signOut();
+
+            startActivity(new Intent(Home_page.this, SignIn.class));
+
+        }
+    }
 
     @Override
-    public void onClick(View view) {
-        if ( view == logout){
-            firebaseAuth.signOut();
-            startActivity(new Intent(this,SignIn.class));
-        }
+    public void onClick(View v) {
+       startActivity(new Intent(this,SignIn.class));
     }
 }

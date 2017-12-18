@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +39,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         firebaseAuth = FirebaseAuth.getInstance();
 
     }
-    public void Login(){
+    public void SignIn(View view){
         String email = edit_email.getText().toString().trim();
         String passwords = edit_password.getText().toString().trim();
 
@@ -54,17 +55,19 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(this, "Password should be more than six charecter", Toast.LENGTH_SHORT).show();
             return;
         }
+
         progressDialog.setMessage("it is Signing in...");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email,passwords).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
-
                 if (task.isSuccessful()){
                     finish();
                     Intent i = new Intent(SignIn.this,Home_page.class);
+                    startActivity(i);
                 }
             }
         });

@@ -18,10 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     EditText userId, password;
-    FirebaseAuth auth;
-
+    private  FirebaseAuth auth;
     ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public void createNewUser(View view) {
         String user = userId.getText().toString().trim();
         String pass = password.getText().toString().trim();
+
         if (TextUtils.isEmpty(user)) {
             Toast.makeText(this, "Provide User ID", Toast.LENGTH_SHORT).show();
             return;
@@ -57,15 +57,14 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.show();
 
 
-
         auth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if( task.isSuccessful()){
                     String str = auth.getCurrentUser().getEmail();
                     Log.d("Current User is:",str);
-
                     progressDialog.dismiss();
+
                     Intent intent = new Intent(MainActivity.this,SignIn.class);
                     startActivity(intent);
                 } else {
@@ -73,5 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void signIn(View view) {
+
+        Intent intent = new Intent(this,SignIn.class);
+       startActivity(intent);
+
     }
 }
