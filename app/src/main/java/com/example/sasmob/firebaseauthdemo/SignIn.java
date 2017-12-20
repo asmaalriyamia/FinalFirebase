@@ -42,8 +42,8 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         firebaseAuth = FirebaseAuth.getInstance();
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("server/saving-data/firelog");
-        DatabaseReference userREf = ref.child("users");
+        DatabaseReference ref = database.getReference("Users");
+        DatabaseReference userREf = ref.child("photographers");
         Map<String , User> users = new HashMap<>();
         users.put("Asma", new User("April 1,1993","Asma Salim"));
         users.put("Hajer", new User("March 3,1993","Hajer Mohsin"));
@@ -89,5 +89,10 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         if (view == btn_signin) {
             startActivity(new Intent(this,Home_page.class));
         }
+    }
+    public void reset(View view) {
+
+        Intent intent1 = new Intent(this,Rest_activity.class);
+        startActivity(intent1);
     }
 }
