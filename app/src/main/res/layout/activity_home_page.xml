@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sasmob.firebaseauthdemo.Home_page"
-    android:background="#b9af99"
+    android:background="#caa043"
     android:padding="50dp"
     android:orientation="vertical">
 
