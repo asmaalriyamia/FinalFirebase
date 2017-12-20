@@ -7,7 +7,7 @@
     tools:context="com.example.sasmob.firebaseauthdemo.MainActivity"
     android:orientation="vertical"
     android:padding="40dp"
-    android:background="#b1af8d">
+    android:background="#caa043">
 
     <ImageView
         android:layout_width="match_parent"
@@ -77,10 +77,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign In"
-            android:background="#b1af8d"
+            android:background="#caa043"
             android:onClick="signIn"
             android:textColor="#837155"/>
 
 </LinearLayout>
+
 
 </LinearLayout>
