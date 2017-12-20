@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="student_names" >
+        <item>AHD Yahya</item>
+        <item>Noor Salim</item>
+        <item>Marwa Ahmed</item>
+        <item>Ameera Khalid</item>
+        <item>Nusaiba Mubaric</item>
+        <item>Amal Ahmed</item>
+        <item>Zeezo muhameed</item>
+        <item>AHD Yahya</item>
+        <item>Noor Salim</item>
+        <item>Marwa Ahmed</item>
+
+    </string-array>
+    <integer-array name="random_imgs">
+        <item>@drawable/image1</item>
+        <item>@drawable/image2</item>
+        <item>@drawable/image3</item>
+        <item>@drawable/image4</item>
+        <item>@drawable/image5</item>
+        <item>@drawable/image1</item>
+        <item>@drawable/image2</item>
+        <item>@drawable/image3</item>
+        <item>@drawable/image4</item>
+        <item>@drawable/image5</item>
+    </integer-array>
+
+
+    <string-array name="type_of_user">
+        <item>Customer</item>
+        <item>Photographer</item>
+    </string-array>
+</resources>
