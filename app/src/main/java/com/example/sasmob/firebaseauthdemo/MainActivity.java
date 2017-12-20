@@ -81,4 +81,14 @@ public class MainActivity extends AppCompatActivity{
        startActivity(intent);
 
     }
+
+    public void reset(View view) {
+
+        Intent intent1 = new Intent(this,Rest_activity.class);
+        startActivity(intent1);
+    }
+
+    public void delete(View view){
+        startActivity(new Intent(this,Rest_activity.class));
+    }
 }
