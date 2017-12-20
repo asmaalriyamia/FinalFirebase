@@ -7,7 +7,7 @@
     tools:context="com.example.sasmob.firebaseauthdemo.MainActivity"
     android:orientation="vertical"
     android:padding="40dp"
-    android:background="#b1af8d">
+    android:background="#caa043">
 
     <ImageView
         android:layout_width="match_parent"
@@ -72,10 +72,11 @@
         android:onClick="signIn"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="235dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="50dp">
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,13 +84,37 @@
 
         <Button
             android:id="@+id/btn_signUp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:background="#b1af8d"
+            android:background="#caa043"
             android:onClick="createNewUser"
-            android:textColor="#837155"/>
+            android:text="Sign Up"
+            android:textColor="#837155" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget Your Password? " />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:background="#caa043"
+            android:onClick="reset"
+            android:textColor="#837155"/>
+
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
